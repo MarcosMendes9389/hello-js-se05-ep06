@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <ul id="catlist">
-      <!-- dynamic content goes here -->
-    </ul>
-    <!-- https://cdnjs.com/libraries/axios -->
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
+  </head>
+  <!-- https://bulma.io/documentation/ -->
+  <body class="box">
+    <div class="tile is-ancestor is-vertical">
+      <div class="tile notification is-primary">
+        <p class="title">Issues</p>
+      </div>
+      <div class="tile notification is-primary">
+          <ul id="catlist"></ul>
+      </div>
+    </div>
+    <!-- https://cdnjs.com/libraries/axios -->
     <script>
-      // index.html
       const api = axios.create({
         baseURL:"https://api.github.com"
       })
