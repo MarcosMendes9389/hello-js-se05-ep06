@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hello-js-se05-ep-06</title>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Hello world vue</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
   </head>
   <body>
-    <script>
-      const api = axios.create({
-        baseURL:"http://localhost:3000"
-      })
-      api.get("/listpessoas").then(ret => {
-        console.log(ret)
+
+      <ul id="listap">
+          <li v-for="item in lista"> {{item.nome}}</li>
+       </ul>
+
+      <script type="text/javascript">
+
+          const api = axios.create({
+            baseURL:"http://localhost:3000"
+          })
+
+    
+      new Vue({
+        el: "#listap",
+        data:{
+          lista:null
+        },
+        created(){
+          api.get("/listpessoas")
+            .then(ret => this.lista = ret.data)
+        }
       })
     </script>
   </body>
