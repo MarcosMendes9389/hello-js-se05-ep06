@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <!-- o estilo vem de um arquivo externo agora -->
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <p>world!</p>
+    <form class="bordado" method="POST" action="atualizarpessoa">
+      <label>
+        Qual id?
+        <input id="id" name="id" required/>
+      </label>
+      <br/>
+      <label>
+        Qual Nome
+        <input id="nome" name="nome" required/>
+      </label>
+      <br/>
+      <label>
+        Telefone
+        <input name="telefone" required/>
+      </label>
+      <br/>
+      <label>
+        Data de Nascimento
+        <input name="datadenascimento" required/>
+      </label>
+      <br/>
+      <input type="submit"/>
+    </form>
+  </body>
+</html>
